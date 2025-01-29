@@ -13,6 +13,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   const logout = () => {
+    alert("U Are Logging out");
     localStorage.removeItem("token");
     setIsAuthenticated(false);
   };

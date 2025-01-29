@@ -11,10 +11,13 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log("login button")
     try {
       const { data } = await axios.post("http://localhost:5000/auth/login", formData);
+      console.log(data);
       login(data.token); // Update authentication state
       navigate("/"); // Redirect to Home
+      console.log("Response:",data)
     } catch (err) {
       console.error(err);
     }
